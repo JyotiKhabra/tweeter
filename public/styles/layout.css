@@ -24,6 +24,12 @@ nav {
   font-family: 'Bungee', cursive;
 }
 
+.container {
+width: 90%;
+position: center;
+background-color: #f4f1ec;
+
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
