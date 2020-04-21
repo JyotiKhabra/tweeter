@@ -26,10 +26,13 @@ nav {
 
 .container {
 width: 90%;
+margin-right: auto;
+margin-left: auto;
+display: block;
 position: center;
 background-color: #f4f1ec;
-
 }
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

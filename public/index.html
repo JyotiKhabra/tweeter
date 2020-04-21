@@ -3,7 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.5em"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.5em">
     
 
     <!-- External CSS -->
@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css"/>
     <link rel="stylesheet" href="/styles/header.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
 
 
     <!-- External JS -->
@@ -41,11 +42,15 @@
   </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <p> testing In an effort to keep our CSS clean and easily readable, we'll be creating separate files for each component of the page. For the purpose of this assignment you will want to create a file called nav.css and link to it in the index.html page, after/below the layout.css link.In an effort to keep our CSS clean and easily readable, we'll be creating separate files for each component of the page. For the purpose of this assignment you will want to create a file called nav.css and link to it in the index.html page, after/below the layout.css link.
-      </p>
-      <p>
-        In an effort to keep our CSS clean and easily readable, we'll be creating separate files for each component of the page. For the purpose of this assignment you will want to create a file called nav.css and link to it in the index.html page, after/below the layout.css link.
-      </p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets/" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </form>
+      </section>
     </main>
   </body>
 </html>
