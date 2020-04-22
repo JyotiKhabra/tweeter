@@ -65,32 +65,11 @@ $(document).ready(function() {
     $(`#post-tweet-form`).ajaxSubmit({url: `/tweets/`, type:'POST'})
   });
 
+  function loadPosts() {
+      $.getJSON(`/tweets/`)
+        .then(tweets =>{
+        renderTweets(tweets)
+      });
+    }
+  loadPosts()
 });
-
-
-
-
-
-
-//Form JQuery
-// function loadPosts() {
-//   $.getJSON(`/tweets/`)
-//   .then(tweets =>{
-//     //console.log("tweets:", tweets);
-//   const $postContainer = $(`#tweet-container`);
-//   for (const tweet of tweets);
-//   const postHTML = `<article class="tweet">
-//   <header>
-//     <img src="${tweetObj.user.avatars}" alt="isaac avatar">
-//       <span class="username" name="username">${tweetObj.user.name}</span>
-//     <span class="userhandle" name="userhandle">${tweetObj.user.handle}</span>
-//   </header>
-//   <div class="text" name="tweet">${tweetObj.content.text} </div>
-//   <footer>
-//     <span class="date" name="date">${tweetObj.created_at}</span>
-//     <span name="flag">⚑ ↱↲ ♥︎ </span>
-//   </footer>
-//   </article>`
-//   $postContainer.append(postHTML);
-//   });
-//   }
