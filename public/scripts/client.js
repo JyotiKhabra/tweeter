@@ -29,9 +29,9 @@ $(document).ready(function() {
       "created_at": 1461113959088
     }
   ]
-const header = $("<header>").addClass("tweet")
-
   const createTweetElement = function(tweetObj) {
+    //const header = $("<header>").addClass("tweet")
+    //const article = $("<article>").addClass("tweet")
     const $tweet = $(`<article class="tweet">
       <header>
         <img src="${tweetObj.user.avatars}" alt="isaac avatar">
@@ -58,4 +58,39 @@ const header = $("<header>").addClass("tweet")
     }
   }
   renderTweets(data);
+
+  $( `#post-tweet-form` ).on( "submit", function( event ) {
+    event.preventDefault();
+    console.log( $( this ).serialize() );
+    $(`#post-tweet-form`).ajaxSubmit({url: `/tweets/`, type:'POST'})
+  });
+
 });
+
+
+
+
+
+
+//Form JQuery
+// function loadPosts() {
+//   $.getJSON(`/tweets/`)
+//   .then(tweets =>{
+//     //console.log("tweets:", tweets);
+//   const $postContainer = $(`#tweet-container`);
+//   for (const tweet of tweets);
+//   const postHTML = `<article class="tweet">
+//   <header>
+//     <img src="${tweetObj.user.avatars}" alt="isaac avatar">
+//       <span class="username" name="username">${tweetObj.user.name}</span>
+//     <span class="userhandle" name="userhandle">${tweetObj.user.handle}</span>
+//   </header>
+//   <div class="text" name="tweet">${tweetObj.content.text} </div>
+//   <footer>
+//     <span class="date" name="date">${tweetObj.created_at}</span>
+//     <span name="flag">⚑ ↱↲ ♥︎ </span>
+//   </footer>
+//   </article>`
+//   $postContainer.append(postHTML);
+//   });
+//   }
