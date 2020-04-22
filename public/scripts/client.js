@@ -4,7 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() {
   const data = [
     {
       "user": {
@@ -29,6 +28,8 @@ $(document).ready(function() {
       "created_at": 1461113959088
     }
   ]
+
+  //Creating the Tweet Body
   const createTweetElement = function(tweetObj) {
     //const header = $("<header>").addClass("tweet")
     //const article = $("<article>").addClass("tweet")
@@ -44,10 +45,10 @@ $(document).ready(function() {
         <span name="flag">⚑ ↱↲ ♥︎ </span>
       </footer>
       </article>`)
-      // $('.tweet').append($tweet);
     return $tweet
   }
 
+//Rendering Tweets Data
   const renderTweets = function(tweets) {
     // loops through tweets
     for (const tweet of tweets){
@@ -57,19 +58,55 @@ $(document).ready(function() {
       $("#tweet-container").append(result);
     }
   }
-  renderTweets(data);
-
-  $( `#post-tweet-form` ).on( "submit", function( event ) {
-    event.preventDefault();
-    console.log( $( this ).serialize() );
-    $(`#post-tweet-form`).ajaxSubmit({url: `/tweets/`, type:'POST'})
-  });
-
-  function loadPosts() {
-      $.getJSON(`/tweets/`)
-        .then(tweets =>{
-        renderTweets(tweets)
-      });
+//  renderTweets(data);
+//Form Validation
+  function checkTweet(tweet)
+  {
+    if(!tweet || tweet.length === 0) {
+      alert("Create a Tweet!");
+      return false;
     }
-  loadPosts()
+    if(tweet.length > 140) {
+      alert("Tweet exceeds character count!");
+      return false;
+    }
+    return true;
+  }
+  
+  //Loading Tweets
+  function loadPosts() {
+    $.getJSON(`/tweets/`)
+    .then(tweets =>{
+      renderTweets(tweets)
+    });
+  }
+  
+  const sendTweet = function(data){
+     console.log('data :>> ', data);
+     $.post('/tweets', data)
+     .then(res =>
+       {
+        loadPosts()
+       }
+     );
+  }
+
+
+  $(document).ready(function() {
+    
+    //Form Submssion
+    $( `#post-tweet-form` ).on( "submit", function( event ) {
+      event.preventDefault();
+      const tweet = $("#tweet-text").val()
+      //console.log("tweet:", tweet);
+      if(checkTweet(tweet)){
+      const data = $(this).serialize()
+      sendTweet(data);
+      }
+      $("#tweet-text").focus()
+      return false;
+    });
+  loadPosts();
 });
+
+
