@@ -29,24 +29,31 @@
     }
   ]
 
+  //Escape Function 
+
+const escape = function (str) {
+  let div = document.createElement('div');
+  // < => &lt; > => &gt;
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
   //Creating the Tweet Body
   const createTweetElement = function(tweetObj) {
-    //const header = $("<header>").addClass("tweet")
-    //const article = $("<article>").addClass("tweet")
     const $tweet = $(`<article class="tweet">
       <header>
-        <img src="${tweetObj.user.avatars}" alt="isaac avatar">
-          <span class="username" name="username">${tweetObj.user.name}</span>
-        <span class="userhandle" name="userhandle">${tweetObj.user.handle}</span>
+        <img src="${escape(tweetObj.user.avatars)}" alt="isaac avatar">
+          <span class="username" name="username">${escape(tweetObj.user.name)}</span>
+        <span class="userhandle" name="userhandle">${escape(tweetObj.user.handle)}</span>
       </header>
-      <div class="text" name="tweet">${tweetObj.content.text} </div>
+      <div class="text" name="tweet">${escape(tweetObj.content.text)} </div>
       <footer>
-        <span class="date" name="date">${tweetObj.created_at}</span>
+        <span class="date" name="date">${escape(tweetObj.created_at)}</span>
         <span name="flag">⚑ ↱↲ ♥︎ </span>
       </footer>
       </article>`)
     return $tweet
   }
+ 
 
 //Rendering Tweets Data
   const renderTweets = function(tweets) {
@@ -59,7 +66,7 @@
     }
   }
 //  renderTweets(data);
-//Form Validation
+//Tweet Validation
   function checkTweet(tweet)
   {
     if(!tweet || tweet.length === 0) {
