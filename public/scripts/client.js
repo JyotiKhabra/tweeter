@@ -33,10 +33,10 @@
 
   const escape = function (str) {
     let div = document.createElement('div');
-    // < => &lt; > => &gt;
     div.appendChild(document.createTextNode(str));
   return div.innerHTML;
   }
+
   //Creating the Tweet Body
   const createTweetElement = function(tweetObj) {
     const $tweet = $(`<article class="tweet">
@@ -57,11 +57,8 @@
 
 //Rendering Tweets Data
   const renderTweets = function(tweets) {
-    // loops through tweets
     for (const tweet of tweets){
-    // calls createTweetElement for each tweet
       let result = createTweetElement(tweet);
-      // takes return value and appends it to the tweets container
       $("#tweet-container").append(result);
     }
   }
@@ -107,11 +104,11 @@
     $( `#post-tweet-form` ).on( "submit", function( event ) {
       event.preventDefault();
       const tweet = $("#tweet-text").val()
-      //console.log("tweet:", tweet);
       if(checkTweet(tweet)){
       const data = $(this).serialize()
       sendTweet(data);
       }
+      $(this)[0].reset();
       $("#tweet-text").focus()
       return false;
     });
