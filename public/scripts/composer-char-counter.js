@@ -6,6 +6,8 @@ $("#tweet-text").keyup(function(){
     $(this).parent().find(".counter").val(counter);
   if (counter < 0) {
     $(this).parent().find('.counter').val(counter).css('color', '#FF0000')
+  } else {
+    $(this).parent().find('.counter').val(counter).css('color', "#000")
   }
 });
 });
