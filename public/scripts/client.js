@@ -31,12 +31,12 @@
 
   //Escape Function 
 
-const escape = function (str) {
-  let div = document.createElement('div');
-  // < => &lt; > => &gt;
-  div.appendChild(document.createTextNode(str));
+  const escape = function (str) {
+    let div = document.createElement('div');
+    // < => &lt; > => &gt;
+    div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+  }
   //Creating the Tweet Body
   const createTweetElement = function(tweetObj) {
     const $tweet = $(`<article class="tweet">
@@ -65,18 +65,21 @@ const escape = function (str) {
       $("#tweet-container").append(result);
     }
   }
-//  renderTweets(data);
+
 //Tweet Validation
-  function checkTweet(tweet)
-  {
+  function checkTweet(tweet){
     if(!tweet || tweet.length === 0) {
-      alert("Create a Tweet!");
-      return false;
+      $('.error').text("Error! Create tweet!")
+      $(".error").slideDown("slow")
+     return false;
     }
     if(tweet.length > 140) {
-      alert("Tweet exceeds character count!");
+      $('.error').text("Error! Tweet exceeds character limit!")
+      $(".error").slideDown("slow")
       return false;
-    }
+    } 
+    $('.error').slideUp("fast")
+    
     return true;
   }
   
@@ -100,7 +103,6 @@ const escape = function (str) {
 
 
   $(document).ready(function() {
-    
     //Form Submssion
     $( `#post-tweet-form` ).on( "submit", function( event ) {
       event.preventDefault();
