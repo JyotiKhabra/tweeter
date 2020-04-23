@@ -26,7 +26,6 @@
 }
 /* Error Message! */
 .new-tweet p{
-  
   margin-top: 10px;
   border: 4px solid red;
   display: none;

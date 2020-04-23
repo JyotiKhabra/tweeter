@@ -33,6 +33,24 @@ position: center;
 background-color: #f4f1ec;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+
+ /* Responsive Design CSS */
+  @media only screen and (min-width: 1024px) {
+    .nav {
+      background-color: #4056A1;
+    }
+  .header {
+    display: inline-flex;
+    flex-direction: column;
+    width: 33.3%;
+    margin-top: 350px; 
+  }
+  .container {
+    display: inline-flex;
+    flex-direction: column;
+    margin-top: 120px;  
+    width: 66.7%;
+    float: right;
+    padding: 30px;
+  }
+}

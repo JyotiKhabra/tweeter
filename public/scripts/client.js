@@ -69,12 +69,12 @@
 //Tweet Validation
   function checkTweet(tweet){
     if(!tweet || tweet.length === 0) {
-      $('.error').text("Error! Create tweet!")
+      $('.error').text("✖︎✖︎ Error! Create tweet! ✖︎✖︎")
       $(".error").slideDown("slow")
      return false;
     }
     if(tweet.length > 140) {
-      $('.error').text("Error! Tweet exceeds character limit!")
+      $('.error').text("✖︎✖︎ Error! Tweet exceeds character count! ✖︎✖︎")
       $(".error").slideDown("slow")
       return false;
     } 
