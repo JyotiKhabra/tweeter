@@ -30,6 +30,10 @@
     <!-- Top nav bar (fixed) -->
     <nav class="nav">
       <span>tweeter</span>
+      <button id="create-tweet" type="submit"> 
+        <span><span class="write">Write</span> a new tweet</span> 
+          <span class="arrow"> ↡ </span>
+      </button>
       <div>
     </nav>
     <header class="header">
@@ -37,8 +41,8 @@
           <img src="/images/profile-hex.png"> 
       </div>
       <br>
-      <div>
-          <h2> Jyoti</h2>
+      <div class="name">
+          <h2> <span> Jyoti </span> Khabra</h2>
       </div>
   </header>
     <!-- Page-specific (main) content here -->
@@ -48,7 +52,7 @@
         <h2>Compose Tweet</h2>
         <form id="post-tweet-form" action="/tweets/" method="POST">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <input name="text" rows="1" id="tweet-text"></input>
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </form>

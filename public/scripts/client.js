@@ -57,11 +57,15 @@
 
 //Rendering Tweets Data
   const renderTweets = function(tweets) {
-    for (const tweet of tweets){
+    $("#tweet-container").empty()
+    const reverseTweets = tweets.reverse()
+    for (const tweet of reverseTweets){
       let result = createTweetElement(tweet);
       $("#tweet-container").append(result);
     }
   }
+
+
 
 //Tweet Validation
   function checkTweet(tweet){
@@ -109,10 +113,15 @@
       sendTweet(data);
       }
       $(this)[0].reset();
+      $(this).parent().find('.counter').css('color', "#000")
       $("#tweet-text").focus()
       return false;
     });
   loadPosts();
+  $("#create-tweet").on("click", () => { 
+    $(".new-tweet").slideToggle("slow")
+    $("#tweet-text").focus()
+  })
 });
 
 

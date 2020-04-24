@@ -24,6 +24,9 @@
   text-decoration: none;
   border-radius: 5px;
 }
+.new-tweet{
+  display: none;
+}
 /* Error Message! */
 .new-tweet p{
   margin-top: 10px;

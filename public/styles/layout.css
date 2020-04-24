@@ -38,12 +38,14 @@ background-color: #f4f1ec;
   @media only screen and (min-width: 1024px) {
     .nav {
       background-color: #4056A1;
+      position: fixed;
     }
+
   .header {
     display: inline-flex;
     flex-direction: column;
     width: 33.3%;
-    margin-top: 350px; 
+    margin-top: 300px; 
   }
   .container {
     display: inline-flex;
