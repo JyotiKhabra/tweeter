@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
 const data = [
   {
     "user": {
@@ -39,6 +40,7 @@ const escape = function(str) {
 
 //Creating the Tweet Body
 const createTweetElement = function(tweetObj) {
+  const timeStamp = moment(tweetObj.created_at).fromNow()
   const $tweet = $(`<article class="tweet">
       <header>
         <img src="${escape(tweetObj.user.avatars)}" alt="isaac avatar">
@@ -47,13 +49,14 @@ const createTweetElement = function(tweetObj) {
       </header>
       <div class="text" name="tweet">${escape(tweetObj.content.text)} </div>
       <footer>
-        <span class="date" name="date">${escape(tweetObj.created_at)}</span>
+        <span class="date" name="date">${escape(timeStamp)}</span>
         <span name="flag">⚑ ↱↲ ♥︎ </span>
       </footer>
       </article>`);
   return $tweet;
 };
- 
+{/* <span class="date" name="date">${escape(tweetObj.created_at)}</span> */}
+
 
 //Rendering Tweets Data
 const renderTweets = function(tweets) {
@@ -120,7 +123,11 @@ $(document).ready(function() {
   $("#create-tweet").on("click", () => {
     $(".new-tweet").slideToggle("slow");
     $("#tweet-text").focus();
+
+
+
   });
 });
+
 
 
