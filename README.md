@@ -6,9 +6,9 @@ I was able to take some starter code and build upon it to practice my HTML, CSS,
 
 ## Final Product
 
-!["Main Page Desktop With Submit Tweet"]
-!["Main Page Tablet"]
-!["Main Page Tablet With Submit Tweet"]
+!["Main Page Desktop With Submit Tweet"](https://github.com/JyotiKhabra/tweeter/blob/master/docs/desktop%20page%20with%20tweet%20button.png?raw=true)
+!["Main Page Tablet"](https://github.com/JyotiKhabra/tweeter/blob/master/docs/tablet%20home%20page.png?raw=true)
+!["Main Page Tablet With Submit Tweet"](https://github.com/JyotiKhabra/tweeter/blob/master/docs/tablet%20home%20page%20with%20tweet%20button.png?raw=true)
 
 ## Getting Started
 
