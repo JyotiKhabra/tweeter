@@ -20,17 +20,18 @@ body {
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
+
 nav {
   font-family: 'Bungee', cursive;
 }
 
 .container {
-width: 90%;
-margin-right: auto;
-margin-left: auto;
-display: block;
-position: center;
-background-color: #f4f1ec;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  position: center;
+  background-color: #f4f1ec;
 }
 
 
@@ -41,18 +42,18 @@ background-color: #f4f1ec;
       position: fixed;
     }
 
-  .header {
-    display: inline-flex;
-    flex-direction: column;
-    width: 33.3%;
-    margin-top: 300px; 
+    .header {
+      display: inline-flex;
+      flex-direction: column;
+      width: 33.3%;
+      margin-top: 300px; 
   }
-  .container {
-    display: inline-flex;
-    flex-direction: column;
-    margin-top: 120px;  
-    width: 66.7%;
-    float: right;
-    padding: 30px;
+    .container { 
+      display: inline-flex;
+      flex-direction: column;
+      margin-top: 120px;  
+      width: 66.7%;
+      float: right;
+      padding: 30px;
   }
 }
