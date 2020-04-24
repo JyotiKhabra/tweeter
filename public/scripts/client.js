@@ -55,8 +55,6 @@ const createTweetElement = function(tweetObj) {
       </article>`);
   return $tweet;
 };
-{/* <span class="date" name="date">${escape(tweetObj.created_at)}</span> */}
-
 
 //Rendering Tweets Data
 const renderTweets = function(tweets) {
@@ -123,9 +121,6 @@ $(document).ready(function() {
   $("#create-tweet").on("click", () => {
     $(".new-tweet").slideToggle("slow");
     $("#tweet-text").focus();
-
-
-
   });
 });
 

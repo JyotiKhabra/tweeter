@@ -2,13 +2,13 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-I was able to take some starter code and build upon it to practice my HTML, CSS, JS, jQuery and AJAX front-end skills, and my Node, Express and MongoDB back-end skills. This was an oppurtunity to showcase problem solving skills and creativity. 
+I was able to take some starter code and build upon it to practice my HTML, CSS, JS, jQuery and AJAX front-end skills, and my Node, Express and MongoDB back-end skills. This was an oppurtunity to showcase problem solving skills and creativity. Added a bonus toggle button that always the user to press the "Write a new tweet" button to showcase the "compose tweet" functionality. Also added the functionality of showcasing how long ago the tweet was created at the bottom of the newly created tweet.
 
 ## Final Product
 
-!["Main Page Desktop"]
+!["Main Page Desktop With Submit Tweet"]
 !["Main Page Tablet"]
-!["Show Error"]
+!["Main Page Tablet With Submit Tweet"]
 
 ## Getting Started
 
@@ -25,3 +25,5 @@ I was able to take some starter code and build upon it to practice my HTML, CSS,
 - Chance 1.1.4
 - Express 4.13.4
 - md5 2.2.1
+- Moment 2.24.0
+
